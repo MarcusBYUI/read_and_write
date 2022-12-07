@@ -1,0 +1,58 @@
+.homeContainer {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.homeContainer > h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 56px;
+  color: #136f63;
+  text-align: center;
+}
+
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.postCard {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px 1px rgba(76, 224, 210, 0.8);
+  padding: 25px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 300ms ease-in-out;
+}
+.postCard:hover {
+  transform: scale(1.1);
+}
+
+.postCard h4 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #136f63;
+}
+
+.postCard p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.postCard span {
+  display: block;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 23px;
+  color: #136f63;
+  text-align: right;
+}

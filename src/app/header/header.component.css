@@ -5,6 +5,8 @@
   justify-content: space-between;
   padding: 22px 5%;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header h3 {
