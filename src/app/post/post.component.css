@@ -1,6 +1,7 @@
 .postContainer {
   max-width: 1200px;
-  margin: 0 auto;
+  width: 90%;
+  margin: 30px auto;
 }
 
 .postHolder h1 {
@@ -34,7 +35,7 @@
   color: #22aaa1;
   background: transparent;
   padding: 0 32px;
-  height: 33px;
+  height: 38px;
   user-select: none;
   cursor: pointer;
   transition: all 300ms ease-in-out;
