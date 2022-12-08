@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { JoditAngularModule } from 'jodit-angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { HeaderComponent } from './header/header.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
-import { ExcerptPipe } from './home/excerpt.pipe';
+import { DatePipe } from './home/date.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { ExcerptPipe } from './home/excerpt.pipe';
     PostComponent,
     HeaderComponent,
     PostEditComponent,
-    ExcerptPipe,
+    DatePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     JoditAngularModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

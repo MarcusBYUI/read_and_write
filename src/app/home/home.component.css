@@ -13,9 +13,13 @@
   text-align: center;
 }
 
+.homeContainer > h4 {
+  text-align: center;
+}
+
 .postGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   gap: 50px;
   margin-top: 50px;
 }

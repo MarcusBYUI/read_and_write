@@ -1,16 +1,17 @@
 <main class="homeContainer">
   <h1>Top Stories</h1>
-  <section class="postGrid">
+  <section *ngIf="posts.length > 0" class="postGrid">
     <div
       *ngFor="let post of posts"
       class="postCard"
-      [routerLink]="['post', post.id]"
+      [routerLink]="['post', post._id]"
     >
       <h4>{{ post.title }}</h4>
       <p>
-        {{ post.content | excerpt }}
+        {{ post.excerpt }}
       </p>
-      <span>{{ post.date }}</span>
+      <span>{{ post.date | date }}</span>
     </div>
   </section>
+  <h4 *ngIf="posts.length < 1">There are no posts at the moment</h4>
 </main>

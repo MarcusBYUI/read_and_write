@@ -1,10 +1,10 @@
 <main class="postContainer">
   <section class="postHolder">
     <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    <p [innerHTML]="post.content"></p>
     <div class="controllers">
       <button routerLink="edit">EDIT</button>
-      <button>DELETE</button>
+      <button (click)="onDelete()">DELETE</button>
     </div>
   </section>
 </main>
