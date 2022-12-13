@@ -59,7 +59,7 @@ app.get("*", (req, res) => {
 
 // establish a connection to the mongo database
 mongoose.connect(
-  "mongodb://localhost:27017/cms",
+  "mongodb://localhost:27017/readwrite",
   { useNewUrlParser: true },
   (err, res) => {
     if (err) {

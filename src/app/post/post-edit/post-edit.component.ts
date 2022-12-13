@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Post } from '../post-model';
@@ -14,12 +16,12 @@ export class PostEditComponent implements OnInit, OnDestroy {
   editMode: boolean = false;
   id: string;
   subscription: Subscription;
-  postForm: FormGroup;
+  content: string;
 
   post: Post = {
     _id: '',
     title: '',
-    content: ``,
+    content: '',
     excerpt: '',
 
     date: new Date(),
@@ -42,10 +44,6 @@ export class PostEditComponent implements OnInit, OnDestroy {
       this.PostService.getPost(this.id).subscribe({
         next: (res) => {
           this.post = res;
-          this.postForm = new FormGroup({
-            title: new FormControl(this.editMode ? this.post.title : ''),
-            content: new FormControl(this.editMode ? this.post.content : ''),
-          });
         },
         error: (err: any) => {
           console.log(err);
@@ -58,14 +56,20 @@ export class PostEditComponent implements OnInit, OnDestroy {
     return html.replace(/(<([^>]+)>)/gi, '');
   }
 
-  onSubmit() {
-    const text = this.StripHTML(this.postForm.value.content);
+  handleEvent(e: any) {
+    console.log(e);
+  }
+
+  onSubmit(form: NgForm) {
+    let value = form.value; // get values from form’s fields
+
+    const text = this.StripHTML(value.content);
 
     const excerpt = text.slice(0, 90) + '...';
     const body = {
       _id: '',
-      title: this.postForm.value.title,
-      content: this.postForm.value.content,
+      title: value.title,
+      content: value.content,
       excerpt: excerpt,
       date: new Date(),
     };
